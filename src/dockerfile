@@ -1,0 +1,22 @@
+FROM python:bullseye
+
+WORKDIR /app
+RUN python -m pip install pyyaml==5.1
+RUN apt-get install git
+RUN git clone 'https://github.com/facebookresearch/detectron2'
+
+RUN python -m pip install --upgrade pip
+RUN apt-get install make gcc g++ libssl-dev
+RUN python -m pip install 'Pillow>=7.1' 'matplotlib' 'pycocotools>=2.0.2' 'termcolor>=1.1' 'yacs>=0.1.8' 'tabulate' 'cloudpickle' 'tqdm>4.29.0' 'tensorboard' 'fvcore<0.1.6,>=0.1.5' 'iopath<0.1.10,>=0.1.7' 'omegaconf>=2.1' 'hydra-core>=1.1' 'black' 'packaging'
+
+RUN python -m pip install torch
+RUN python -m pip install opencv-python
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+RUN python -m pip install torchvision
+RUN python -m pip install uvicorn fastapi python-multipart
+
+COPY . .
+
+
+
+ENTRYPOINT [ "uvicorn", "server:app", "--host", "0.0.0.0", "--reload" ]

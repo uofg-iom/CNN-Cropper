@@ -1,0 +1,11 @@
+/src/model_final.pth
+/src/detectron2
+/src/__pycache__
+/src/*.png
+
+/out/
+/exp/Calc.ipynb
+
+/.vscode/
+
+.DS_Store
