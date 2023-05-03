@@ -9,3 +9,4 @@
 /.vscode/
 
 .DS_Store
+src/.model_final.pth.icloud
