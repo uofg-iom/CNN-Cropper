@@ -42,7 +42,7 @@ cfg.MODEL.ROI_HEADS.NUM_CLASSES = 4
 if __name__ == "__main__":
   cfg.MODEL.WEIGHTS = os.path.join("/Users/tomburnip/Library/CloudStorage/OneDrive-Personal/Uni Stuff/Level 5/DSTP/CNN-Cropper/src/model_final.pth")
 else:
-  cfg.MODEL.WEIGHTS = os.path.join("/app/model_final.pth")
+  cfg.MODEL.WEIGHTS = os.path.join("./model_final.pth")
 # cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5 
 # cfg.DATASETS.TEST = (thing_folder+"_test", )
 predictor = DefaultPredictor(cfg)

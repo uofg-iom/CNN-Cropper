@@ -1,0 +1,9 @@
+python-multipart
+pycocotools
+torchvision
+omegaconf
+cloudpickle
+fvcore
+torch
+opencv-python
+fastapi
